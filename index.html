@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 Lunch Buffets near SMU — under $45</title>
+<meta name="description" content="Ranked lunch buffets near SMU, Orchard, Chinatown and MBS for 2 people under $45.">
+<style>
+:root{--bg:#12110f;--card:#1c1a17;--ink:#f4efe6;--muted:#b7aea0;--line:#2c2924;--gold:#e2b657;--good:#7dcea0;--warn:#e8a87c}
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--bg);color:var(--ink);line-height:1.5}
+header{padding:36px 20px 16px;max-width:1100px;margin:auto}
+.kicker{letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--gold);font-family:system-ui,sans-serif}
+h1{font-size:clamp(28px,5vw,48px);margin:8px 0 10px;font-weight:500}
+.sub{color:var(--muted);max-width:720px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px auto 8px;max-width:1100px;padding:0 20px;font-family:system-ui,sans-serif}
+.filters button{background:transparent;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:999px;cursor:pointer}
+.filters button.on{background:var(--gold);color:#1a160d;border-color:var(--gold)}
+.grid{display:grid;gap:22px;padding:18px 20px 60px;max-width:1100px;margin:auto}
+@media(min-width:840px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card.hid{display:none}
+.photo{height:190px;background:#2a2620 center/cover no-repeat;position:relative}
+.badge{position:absolute;top:12px;left:12px;background:#000c;color:var(--gold);padding:4px 10px;border-radius:999px;font-family:system-ui,sans-serif;font-size:12px}
+.match{position:absolute;top:12px;right:12px;width:58px;height:58px}
+.body{padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+h2{margin:0;font-size:24px;font-weight:500}
+.meta{font-family:system-ui,sans-serif;font-size:13px;color:var(--muted)}
+.price{font-size:20px;color:var(--gold)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:system-ui,sans-serif;font-size:11px;border:1px solid var(--line);padding:3px 8px;border-radius:999px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px;font-family:system-ui,sans-serif}
+.links a{color:#1a160d;background:var(--gold);text-decoration:none;padding:7px 10px;border-radius:999px;font-size:12px}
+.links a.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+footer{max-width:1100px;margin:auto;padding:0 20px 50px;color:var(--muted);font-size:13px;font-family:system-ui,sans-serif}
+.warn{color:var(--warn)}
+</style>
+</head>
+<body>
+<header>
+<div class="kicker">SMU lunch guide · Sep 2026</div>
+<h1>10 lunch buffets near campus, under $45.</h1>
+<p class="sub">Ranked for two people around SMU (81 Victoria St). Prefer no free-flow wine. Prices are late September 2026. <code>++</code> means add ~20% for service + GST.</p>
+</header>
+<div class="filters">
+<button class="on" data-f="all">All</button>
+<button data-f="walk">Walk from SMU</button>
+<button data-f="nocard">No card needed</button>
+<button data-f="cheap">Under $30++</button>
+<button data-f="hotel">Hotel buffet</button>
+<button data-f="orchard">Orchard</button>
+</div>
+<section class="grid" id="grid"></section>
+<footer>
+<p>Match score weights walk from SMU 35%, price under $45 25%, buffet variety 20%, no card 10%, no bundled wine 5%, booking ease 5%.</p>
+<p class="warn">Book ahead. 1-for-1 deals usually need the named bank card and are blacked out on public holidays and their eves. Confirm the day you go.</p>
+<p>Source repo: <a href="https://github.com/ImNuza/smu-lunch-buffets" style="color:var(--gold)">github.com/ImNuza/smu-lunch-buffets</a></p>
+</footer>
+<script>
+const places=[
+{rank:1,match:96,name:"Café Mosaic",hotel:"Carlton Hotel",food:"Hong Kong kitchen buffet — dim sum, roast pork, seafood on ice, bolo buns, egg tarts",price:"$34++ / ~$41 nett with 1-for-1",rack:"Rack $68++. DBS/POSB, Citibank, OCBC or UOB. Seniors 55+ get 50% off instead.",addr:"L1, 76 Bras Basah Road, 189558",near:"3–5 min walk from SMU",hours:"Lunch 12pm–2.30pm daily",tel:"+6563118195",web:"https://www.carltonhotel.sg/dining/cafe-mosaic",maps:"https://maps.google.com/?q=Cafe+Mosaic+Carlton+Hotel+76+Bras+Basah+Road",ig:"https://www.instagram.com/carltonhotelsg/",fb:"https://www.facebook.com/CarltonHotelSG/",img:"https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1400&q=80",tags:["walk","hotel"],note:"No wine bundled. Not valid eve PH / PH."},
+{rank:2,match:94,name:"Sun’s Café",hotel:"Hotel Grand Pacific",food:"Peranakan buffet — ayam buah keluak, sambal udang, nyonya laksa, kueh, durian pengat",price:"~$30–36++ / ~$36–43 nett with 1-for-1 or Eatigo",rack:"Rack $60++ weekday / $65++ Fri–Sun. Maybank, DBS and similar deals.",addr:"101 Victoria Street, 188018",near:"2–3 min walk from SMU",hours:"Lunch 12pm–2.30pm",tel:"+6564311818",web:"https://www.hotelgrandpacific.com.sg/dining/sun-s-cafe",maps:"https://maps.google.com/?q=Sun%27s+Cafe+Hotel+Grand+Pacific+101+Victoria+Street",ig:"",fb:"",img:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1400&q=80",tags:["walk","hotel"],note:"Closest hotel buffet. Use a deal or it exceeds $45."},
+{rank:3,match:92,name:"Royale",hotel:"Mercure Singapore Bugis",food:"International hotel buffet — seafood on ice, live stations, local + Western, desserts",price:"$32.50++ / ~$39 nett weekday with 1-for-1",rack:"Rack $65++ Mon–Fri / $70++ weekend. DBS/POSB, Maybank, OCBC, Citi or UOB.",addr:"L3, 122 Middle Road, 188973",near:"6–8 min walk from SMU",hours:"Lunch 12pm–2.30pm, last order 2pm",tel:"+6565216030",web:"https://www.mercure-singapore-bugis.com/offers/international-buffet-at-royale/",maps:"https://maps.google.com/?q=Royale+Mercure+Singapore+Bugis+122+Middle+Road",ig:"https://www.instagram.com/mercuresingaporebugis/",fb:"https://www.facebook.com/MercureSingaporeBugis/",img:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",tags:["walk","hotel"],note:"Wine is optional +$30++. Skip it."},
+{rank:4,match:91,name:"Suki-Ya",hotel:"Bugis+",food:"Japanese shabu-shabu / sukiyaki AYCE — 8 soup bases, sliced meats, veg bar, 80 min",price:"$23.90++ / ~$29 nett",rack:"+$3++ Fri–Sun & PH. No card needed. Premium lunch $36.90++.",addr:"#04-14/15, 201 Victoria Street, 188067",near:"5–8 min walk from SMU",hours:"Daily from 11.30am",tel:"+6568845778",web:"https://www.suki-ya.com.sg/",maps:"https://maps.google.com/?q=Suki-Ya+Bugis%2B+201+Victoria+Street",ig:"https://www.instagram.com/sukiyasg/",fb:"",img:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1400&q=80",tags:["walk","nocard","cheap"],note:"Also at Plaza Singapura and Marina Square."},
+{rank:5,match:89,name:"90 Minutes",hotel:"Rendezvous Hotel",food:"Korean tteokbokki hotpot — custom broths, rice cakes, seafood, meats, leftover-broth fried rice",price:"$17.90++ / ~$21.50 nett weekday before 4pm",rack:"After 4pm and weekends $26.90++. Student $15.90++ weekday lunch.",addr:"#01-01, 9 Bras Basah Road, 189559",near:"4–6 min walk from SMU",hours:"Daily 10.30am–11pm",tel:"+6569577778",web:"https://www.90minutes.sg/",maps:"https://maps.google.com/?q=90+Minutes+Rendezvous+Hotel+9+Bras+Basah+Road",ig:"https://www.instagram.com/90minutes.sg/",fb:"https://www.facebook.com/90minutes.sg",img:"https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1400&q=80",tags:["walk","nocard","cheap"],note:"Cheapest walk from campus. 90-minute cap."},
+{rank:6,match:87,name:"I’m Kim Korean BBQ",hotel:"SOTA",food:"Korean BBQ AYCE — bulgogi, pork belly, spicy pork, chicken, banchan",price:"$18.90++ / ~$23 nett lunch",rack:"Early-bird slots can drop to $14.90++ (11.30am–12pm, check current promo).",addr:"#01-04, 1 Zubir Said Drive, 227968",near:"8–12 min walk via Bencoolen",hours:"Lunch from 11.30am, ~80–90 min",tel:"+6562387218",web:"https://kingdomfood.sg/im-kim-korean-bbq/",maps:"https://maps.google.com/?q=I%27m+Kim+Korean+BBQ+SOTA+1+Zubir+Said+Drive",ig:"https://www.instagram.com/imkimkoreanbbq/",fb:"https://www.facebook.com/imkimkoreanbbq",img:"https://images.unsplash.com/photo-1600891964092-4316c14cad32?auto=format&fit=crop&w=1400&q=80",tags:["walk","nocard","cheap"],note:"Lunch spread is smaller than dinner."},
+{rank:7,match:86,name:"Café Lodge",hotel:"YWCA Fort Canning",food:"Teochew-style porridge buffet — braised duck, pork belly, seafood, condiments, coffee/tea, dessert",price:"$20.80++ / ~$25 nett weekday lunch",rack:"Weekend lunch ~$23.80++. Kids under 7 free.",addr:"6 Fort Canning Road, 179494",near:"8–12 min walk / Dhoby Ghaut",hours:"Lunch 11.30am–2.30pm",tel:"+6563358008",web:"https://www.ywcafortcanning.org.sg/cafelodge",maps:"https://maps.google.com/?q=Cafe+Lodge+YWCA+Fort+Canning+6+Fort+Canning+Road",ig:"https://www.instagram.com/ywcafortcanning.sg/",fb:"",img:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1400&q=80",tags:["walk","nocard","cheap"],note:"Net proceeds support YWCA programmes."},
+{rank:8,match:82,name:"The Landmark",hotel:"Village Hotel Bugis",food:"Halal international — biryani, chilli crab-style dishes, satay, roast, local + Western",price:"$42.95++ / ~$51.50 nett weekday (1-for-1, no card)",rack:"$85.90++ for TWO weekday lunch. MUIS halal-certified.",addr:"#05-01, 390 Victoria Street, 188061",near:"8–12 min walk from SMU",hours:"Lunch 12pm–2.30pm",tel:"+6562997786",web:"https://landmark.com.sg/",maps:"https://maps.google.com/?q=The+Landmark+Village+Hotel+Bugis+390+Victoria+Street",ig:"https://www.instagram.com/thelandmarksingapore/",fb:"https://www.facebook.com/TheLandmarkSingapore",img:"https://images.unsplash.com/photo-1563379091339-03b71bdd69b5?auto=format&fit=crop&w=1400&q=80",tags:["walk","nocard","hotel"],note:"Advertised ++ is under $45; nett is a bit over if you count GST/service."},
+{rank:9,match:80,name:"Kiseki Japanese Buffet",hotel:"Orchard Central",food:"Japanese AYCE, 100+ items — sashimi, sushi, tempura, teppanyaki, shabu, desserts",price:"$30.90++ / ~$37 nett daily lunch",rack:"No card needed. Festive dates higher.",addr:"#08-01/02/03, 181 Orchard Road, 238896",near:"15–18 min MRT via Dhoby Ghaut / Somerset",hours:"Lunch 11.30am–3pm, last order 2.30pm",tel:"+6598175259",web:"https://www.kisekirestaurant.com.sg/pricing/",maps:"https://maps.google.com/?q=Kiseki+Japanese+Buffet+Orchard+Central",ig:"https://www.instagram.com/kisekisg/",fb:"https://www.facebook.com/kisekirestaurant",img:"https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1400&q=80",tags:["nocard","orchard"],note:"Orchard Road view from L8."},
+{rank:10,match:78,name:"Window on the Park",hotel:"Holiday Inn Orchard",food:"International hotel buffet — local, Asian, salads, noodles, tandoor, desserts",price:"$35++ / ~$42 nett weekday lunch",rack:"Mon–Fri promo 7 Sep–22 Nov 2026. No card needed.",addr:"L2, 11 Cavenagh Road, 229616",near:"15–20 min via Dhoby Ghaut",hours:"Mon–Fri 12pm–2 / 2.30pm",tel:"+6567338333",web:"https://singaporeorchard.holidayinn.com/dining",maps:"https://maps.google.com/?q=Window+on+the+Park+Holiday+Inn+Singapore+Orchard+City+Centre",ig:"https://www.instagram.com/holidayinnsporeorchardcityctr/",fb:"",img:"https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1400&q=80",tags:["nocard","hotel","orchard"],note:"No wine package on the weekday lunch."}
+];
+function ring(p){const c=2*Math.PI*16;const off=c*(1-p/100);return `<svg class=\"match\" viewBox=\"0 0 58 58\"><circle cx=\"29\" cy=\"29\" r=\"16\" fill=\"#000a\" stroke=\"#3a342c\" stroke-width=\"4\"/><circle cx=\"29\" cy=\"29\" r=\"16\" fill=\"none\" stroke=\"#e2b657\" stroke-width=\"4\" stroke-dasharray=\"${c}\" stroke-dashoffset=\"${off}\" transform=\"rotate(-90 29 29)\"/><text x=\"29\" y=\"33\" text-anchor=\"middle\" fill=\"#f4efe6\" font-size=\"11\" font-family=\"system-ui\">${p}%</text></svg>`}
+const grid=document.getElementById('grid');
+grid.innerHTML=places.map(p=>`<article class=\"card\" data-tags=\"${p.tags.join(' ')}\">
+<div class=\"photo\" style=\"background-image:url('${p.img}')\">${ring(p.match)}<div class=\"badge\">#${p.rank} · ${p.match}% match</div></div>
+<div class=\"body\">
+<h2>${p.name}</h2>
+<div class=\"meta\">${p.hotel} · ${p.near}</div>
+<div class=\"price\">${p.price}</div>
+<p>${p.food}</p>
+<div class=\"meta\">${p.rack}</div>
+<div class=\"meta\">${p.addr}<br>${p.hours}</div>
+<div class=\"tags\">${p.tags.map(t=>`<span class=\"tag\">${t}</span>`).join('')}</div>
+<div class=\"meta\">${p.note}</div>
+<div class=\"links\">
+<a href=\"${p.maps}\" target=\"_blank\" rel=\"noopener\">Maps</a>
+<a class=\"ghost\" href=\"${p.web}\" target=\"_blank\" rel=\"noopener\">Website</a>
+<a class=\"ghost\" href=\"tel:${p.tel}\">Call</a>
+${p.ig?`<a class=\"ghost\" href=\"${p.ig}\" target=\"_blank\" rel=\"noopener\">Instagram</a>`:''}
+${p.fb?`<a class=\"ghost\" href=\"${p.fb}\" target=\"_blank\" rel=\"noopener\">Facebook</a>`:''}
+</div></div></article>`).join('');
+document.querySelectorAll('.filters button').forEach(btn=>btn.onclick=()=>{
+document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('on'));
+btn.classList.add('on');
+const f=btn.dataset.f;
+document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hid', !(f==='all'||c.dataset.tags.includes(f))));
+});
+</script>
+</body>
+</html>
